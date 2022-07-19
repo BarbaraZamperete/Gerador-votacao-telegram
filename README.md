@@ -1,8 +1,8 @@
 # Gerador e gerenciador de votações no Telegram
 
-1- Baixe o repositório
-2- Rode o comando npm init
-3- Acesse localhost:4000
+* Baixe o repositório
+* Rode o comando npm init
+* Acesse localhost:4000
 
 
 
