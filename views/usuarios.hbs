@@ -1,0 +1,42 @@
+<h3>Usuários</h3>
+<section class="usuários">
+    <table class="user-table">
+        <thead >
+            <tr>
+                <th class="title">Id</th>
+                <th class="title">Nome</th>
+                <th class="title">Numero</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <form method="POST" action="/usuarios/adicionar">
+                    <td >
+                        <input disabled type="text"/>
+                    </td>
+                    <td >
+                        <input name="nome" type="text"/>
+                    </td>
+                    <td >
+                        <input name="numero" type="text"/>
+                    </td>
+                    <td >
+                        <input type="submit"/>
+                    </td>
+                </form>
+            </tr>
+                {{#each usuarios}}
+                <tr class="user-row">
+                    <td>{{id}}</td>
+                    <td>{{nome}}</td>
+                    <td>{{numero}}</td>
+                    <td>
+                        <form method="POST" action="/usuarios/deletar/{{id}}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+        </tbody>
+    </table>
+</section>

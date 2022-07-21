@@ -46,10 +46,10 @@ const votacoes = [
 ]
 
 const usuarios = [
-    { id: 1, nome: "Fulano", numero: "991292263" },
-    { id: 2, nome: "Fulano", numero: "981292264" },
-    { id: 3, nome: "Fulano", numero: "981293265" },
-    { id: 4, nome: "Fulano", numero: "991293266" },
+    { id: 1, nome: "Fulano1", numero: "991292263" },
+    { id: 2, nome: "Fulano2", numero: "981292264" },
+    { id: 3, nome: "Fulano3", numero: "981293265" },
+    { id: 4, nome: "Fulano4", numero: "991293266" },
 ]
 const votacao = votacoes[0]
 
