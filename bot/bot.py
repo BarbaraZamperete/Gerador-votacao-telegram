@@ -14,7 +14,7 @@ keyApi = os.environ.get("KEY_API")
 
 enquetes = ["Gosta de pizza?","Gosta de sorvete?","Você gosta de rocky?"]
 
-numeros = ["95991779491"]
+numeros = [""]
 
 def start(update:Updater,context:CallbackContext):
     print(update)
