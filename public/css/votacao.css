@@ -1,0 +1,25 @@
+.votacao {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+label {
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    resize: none;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #33334d;
+    color: #fff;
+    cursor: pointer;
+}

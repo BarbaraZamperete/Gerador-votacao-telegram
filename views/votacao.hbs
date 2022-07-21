@@ -1,7 +1,12 @@
-<h3>Usuários</h3>
+<h3>Votação</h3>
 <section class="usuários">
-    <form action="/criar">
-        <input type="text" name="titulo" id="">
-        <textarea></textarea>
+    <form class="votacao" action="/criar">
+        <label for="titulo">Nome da votação:</label>
+        <input required type="text" name="titulo" id="">
+        <label for="descricao">Descrição da votação:</label>
+        <textarea required name="descricao"></textarea>
+        <label for="duracao">Duração (dias):</label>
+        <input required name="duracao" value="1" type="number">
+        <input type="submit" value="Criar">
     </form>
 </section>
