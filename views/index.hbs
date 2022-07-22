@@ -8,17 +8,18 @@
                 <p class="card__text">{{descricao}} </p>
                 <div class="opcoes-votacao">
                     <p>Sim</p>
-                    <div class="opcao-bar" style="width: calc(100% - {{sim}}%)">{{sim}}</div>
+                    <div class="opcao-bar" style="width: calc(100% - {{nao}}%)">{{sim}}</div>
                     <p>Não</p>
-                    <div class="opcao-bar" style="width: calc(100% - {{nao}}%)">{{nao}}</div>
+                    <div class="opcao-bar" style="width: calc(100% - {{sim}}%)">{{nao}}</div>
                 </div>
                 <div class="dados">
                     <p>{{inicio}}</p>
                     <p>{{termino}}</p>
                     <p>{{status}}</p>
                 </div>
-                <button class="btn btn--block card__btn">Editar</button>
-                <button class="btn btn--block card__btn">Finalizar</button>
+                <form action="/editar/{{id}}" method="get"><button type="submit" class="btn btn--block card__btn">Editar</button></form>
+                <form action="/excluir/{{id}}" method="post"><button type="submit" class="btn btn--block card__btn">Excluir</button>
+                </form>
             </div>
         </div>
     </li>

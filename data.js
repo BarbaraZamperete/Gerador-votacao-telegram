@@ -18,7 +18,7 @@ const votacoes = [
         termino: "28/07/2022",
         status: "ativa",
         sim: 24,
-        nao: 32,
+        nao: 45,
         total: 56
     },
     {
@@ -28,8 +28,8 @@ const votacoes = [
         inicio: "17/07/2022",
         termino: "28/07/2022",
         status: "ativa",
-        sim: 24,
-        nao: 32,
+        sim: 81,
+        nao: 14,
         total: 56
     },
     {
@@ -39,8 +39,8 @@ const votacoes = [
         inicio: "17/07/2022",
         termino: "28/07/2022",
         status: "ativa",
-        sim: 24,
-        nao: 32,
+        sim: 25,
+        nao: 78,
         total: 56
     },
 ]
@@ -53,4 +53,11 @@ const usuarios = [
 ]
 const votacao = votacoes[0]
 
-module.exports = {votacoes, usuarios, votacao}
+const userLogado = [
+    {
+        login: "admin",
+        senha: "admin123",
+    }
+]
+
+module.exports = { votacoes, usuarios, votacao, userLogado }

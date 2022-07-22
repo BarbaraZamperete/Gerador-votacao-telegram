@@ -17,7 +17,9 @@ router.get('/', exibirVotacoes)
 
 router.get('/criar', criarVotacao)
 
-router.get('/editar', editarVotacao)
+router.get('/editar/:id', editarVotacao)
+
+router.post('/excluir/:id', editarVotacao)
 
 
 //USUÁRIOS
