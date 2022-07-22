@@ -3,50 +3,27 @@ const {
 } = require('express');
 const router = Router();
 
+const { logar, deslogar } = require('../controllers/index.controller')
+const { adicionarUser, removerUser, listarUsers } = require('../controllers/user.controller')
+const { criarVotacao, finalizarVotacao, editarVotacao, exibirVotacoes } = require('../controllers/votacao.controller')
 
-const { votacoes, usuarios, votacao} = require("../data")
 
 //LOGIN PAGE
-router.get('/login', async (req, res) => {
-    res.render('login');
-})
-
+router.get('/login', logar)
+router.get('/logout', deslogar)
 
 //VOTAÇÕES
-router.get('/', async (req, res) => {
-    res.render('index', { votacoes });
-})
+router.get('/', exibirVotacoes)
 
-router.get('/ativas', async (req, res) => {
-    res.render('index', { votacoes });
-})
+router.get('/criar', criarVotacao)
 
-router.get('/finalizadas', async (req, res) => {
-    res.render('index', { votacoes });
-})
-
-router.get('/criar', async (req, res) => {
-    res.render('votacao');
-})
-
-router.get('/editar', async (req, res) => {
-    res.render('votacao', { votacao });
-})
+router.get('/editar', editarVotacao)
 
 
 //USUÁRIOS
 
-router.get('/usuarios', async (req, res) => {
-    res.render('usuarios', {usuarios});
-})
-router.post('/usuarios/adicionar', async (req, res) => {
-    const { id, nome, numero } = req.body
-    console.log(req.body)
-    res.render('usuarios', {usuarios});
-})
-router.post('/usuarios/deletar/:id', async (req, res) => {
-    console.log(req.params.id)
-    res.render('usuarios', {usuarios});
-})
+router.get('/usuarios', listarUsers)
+router.post('/usuarios/adicionar', adicionarUser)
+router.post('/usuarios/deletar/:id', removerUser)
 
 module.exports = router
