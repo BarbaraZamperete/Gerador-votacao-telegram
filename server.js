@@ -10,7 +10,10 @@ const flash = require("connect-flash");
 //settings
 app.set('port', process.env.PORT || 4000);
 
-app.engine('.hbs', engine({ extname: '.hbs' }));
+app.engine('.hbs', engine({ extname: '.hbs', runtimeOptions: {
+    allowProtoMethodsByDefault: true,
+    allowProtoPropertiesByDefault: true,
+} }));
 app.set('view engine', '.hbs');
 app.set('views', './views');
 

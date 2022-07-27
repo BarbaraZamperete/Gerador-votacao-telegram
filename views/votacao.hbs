@@ -1,13 +1,13 @@
 <h3 class="title-page">Votação</h3>
 <section class="usuários">
-    <form class="votacao" action="/criar">
+    <form class="votacao" action="/criar" method="post">
         <label for="titulo">Nome da votação:</label>
         <input required type="text" name="titulo" id="">
         <label for="descricao">Descrição da votação:</label>
         <textarea required name="descricao"></textarea>
         <label for="duracao">Duração (dias):</label>
-        <input required name="duracao" value="{{votacao.duracao}}" type="number">
+        <input required name="duracao" value="0" type="number">
         <input type="submit" value="Criar">
     </form>
-    <form action="/excluir/{{votacao._id}}" method="post"><button type="submit" class="btn btn--block card__btn">Excluir</button></form>
 </section>
+

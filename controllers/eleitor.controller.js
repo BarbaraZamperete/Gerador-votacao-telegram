@@ -9,14 +9,14 @@ eleitorCtrl.listarEleitor = async (req, res) => {
     res.render('eleitores', {allEleitores});
 }
 
-eleitorCtrl.adicionarEleitore = async (req, res) => {
+eleitorCtrl.adicionarEleitor = async (req, res) => {
     const { nome, numero } = req.body
     const newEleitor = new Eleitor({nome: nome, numero: numero})
     await newEleitor.save()
     res.redirect('/eleitores')
 }
 
-eleitorCtrl.removerEleitore = async (req, res) => {
+eleitorCtrl.removerEleitor = async (req, res) => {
     console.log(req.params.id)
     await Eleitor.findByIdAndDelete(req.params.id)
     res.redirect('/eleitores')

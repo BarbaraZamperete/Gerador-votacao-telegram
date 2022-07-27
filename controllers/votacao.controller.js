@@ -25,13 +25,15 @@ votacaoCtrl.criarVotacao = async (req, res) => {
         total: 0
     })
     await newVotacao.save()
+    console.log(req.body)
+    console.log(newVotacao)
     res.redirect('/')
 }
 
 votacaoCtrl.editarVotacaoForm = async (req, res) => {
     console.log("Buscar no banco a votacao com o id: ", req.params.id)
     const votacaoEditable = await Votacao.findById(req.params.id)
-    res.render('votacao', { votacaoEditable });
+    res.render('editarVotacao', { votacaoEditable });
 }
 votacaoCtrl.editarVotacao = async (req, res) => {
     const id = req.params.id
