@@ -1,4 +1,6 @@
 const app = require('./server');
+require('./db')
+
 const PORT = app.get('port')
 
 app.listen(PORT, () => {
