@@ -1,5 +1,5 @@
 const app = require('./server');
-require('./db')
+// require('./db')
 
 const PORT = app.get('port')
 

@@ -45,7 +45,7 @@ const votacoes = [
     },
 ]
 
-const usuarios = [
+const eleitores = [
     { id: 1, nome: "Fulano1", numero: "991292263" },
     { id: 2, nome: "Fulano2", numero: "981292264" },
     { id: 3, nome: "Fulano3", numero: "981293265" },
@@ -60,4 +60,4 @@ const userLogado = [
     }
 ]
 
-module.exports = { votacoes, usuarios, votacao, userLogado }
+module.exports = { votacoes, eleitores, votacao, userLogado }

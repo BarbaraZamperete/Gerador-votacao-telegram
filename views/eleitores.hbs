@@ -1,4 +1,4 @@
-<h3 class="title-page">Usuários</h3>
+<h3 class="title-page">Eleitores</h3>
 <section class="usuários">
     <table class="user-table">
         <thead >
@@ -10,7 +10,7 @@
         </thead>
         <tbody>
             <tr>
-                <form method="POST" action="/usuarios/adicionar">
+                <form method="POST" action="/eleitores/adicionar">
                     <td >
                         <input disabled type="text"/>
                     </td>
@@ -25,13 +25,13 @@
                     </td>
                 </form>
             </tr>
-                {{#each usuarios}}
+                {{#each eleitores}}
                 <tr class="user-row">
                     <td>{{id}}</td>
                     <td>{{nome}}</td>
                     <td>{{numero}}</td>
                     <td>
-                        <form method="POST" action="/usuarios/deletar/{{id}}">
+                        <form method="POST" action="/eleitores/deletar/{{id}}">
                             <input type="submit" value="Delete">
                         </form>
                     </td>
