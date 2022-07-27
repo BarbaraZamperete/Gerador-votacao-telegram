@@ -1,19 +1,25 @@
 const eleitorCtrl = {}
+
+const Eleitor = require('../models/eleitor')
+
 const { votacoes, eleitores, votacao } = require("../data")
 
 eleitorCtrl.listarEleitor = async (req, res) => {
-    res.render('eleitores', {eleitores});
+    const allEleitores = await Eleitor.find()
+    res.render('eleitores', {allEleitores});
 }
 
-eleitorCtrl.adicionarUser = async (req, res) => {
-    const { id, nome, numero } = req.body
-    console.log(req.body)
-    res.render('eleitores', {eleitores});
+eleitorCtrl.adicionarEleitore = async (req, res) => {
+    const { nome, numero } = req.body
+    const newEleitor = new Eleitor({nome: nome, numero: numero})
+    await newEleitor.save()
+    res.redirect('/eleitores')
 }
 
-eleitorCtrl.removerUser = async (req, res) => {
+eleitorCtrl.removerEleitore = async (req, res) => {
     console.log(req.params.id)
-    res.render('eleitores', {eleitores});
+    await Eleitor.findByIdAndDelete(req.params.id)
+    res.redirect('/eleitores')
 }
 
 module.exports = eleitorCtrl

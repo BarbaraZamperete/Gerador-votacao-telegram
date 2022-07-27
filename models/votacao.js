@@ -6,7 +6,7 @@ const VotacaoSchema = new Schema({
     descricao: String,
     data: String,
     duracao: Number,
-    status: String,
+    status: Boolean,
     sim: Number,
     nao: Number,
     total: Number,

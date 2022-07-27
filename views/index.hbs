@@ -18,8 +18,11 @@
                     <p>{{status}}</p>
                 </div>
                 <form action="/editar/{{id}}" method="get"><button type="submit" class="btn btn--block card__btn">Editar</button></form>
-                <form action="/excluir/{{id}}" method="post"><button type="submit" class="btn btn--block card__btn">Excluir</button>
-                </form>
+                {{#if status}}
+                <form action="/desativar/{{id}}" method="post"><button type="submit" class="btn btn--block card__btn">Desativar</button></form>
+                {{else}}
+                <form action="/ativar/{{id}}" method="post"><button type="submit" class="btn btn--block card__btn">Ativar</button></form>
+                {{/if}}
             </div>
         </div>
     </li>
