@@ -2,7 +2,6 @@ const votacaoCtrl = {}
 
 const Votacao = require('../models/votacao')
 
-const { votacoes, votacao, userLogado } = require("../data")
 
 votacaoCtrl.exibirVotacoes = async (req, res) => {
     const allVotacoes = await Votacao.find()
