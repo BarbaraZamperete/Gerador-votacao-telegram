@@ -1,11 +1,11 @@
 # Gerador e gerenciador de votações no Telegram
 
-> clonar o repositorio
-> rodar o comando npm install
-> criar arquivo ".env" 
-> no arquivo ".env" adicionar "URL=<string de conexão do banco>"
-> rodar o comando "npm run dev" ou "npm start" para iniciar o serviço
-> é necessário criar manualmente no banco o usuário que loga no sistema
+* clonar o repositorio
+* rodar o comando npm install
+* criar arquivo ".env" 
+* no arquivo ".env" adicionar "URL=<string de conexão do banco>"
+* rodar o comando "npm run dev" ou "npm start" para iniciar o serviço
+* é necessário criar manualmente no banco o usuário que loga no sistema
 
 
 
