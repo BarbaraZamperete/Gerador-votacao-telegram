@@ -14,6 +14,16 @@
 ## Gerenciar usuários áptos a votar:
 ### - adicionar numero e nome
 ### - remover numero e nome
+# Gerador de Votações
+
+> clonar o repositorio
+> rodar o comando npm install
+> criar arquivo ".env" 
+> no arquivo ".env" adicionar "URL=<string de conexão do banco>"
+> rodar o comando "npm run dev" ou "npm start" para iniciar o serviço
+> é necessário criar manualmente no banco o usuário que loga no sistema
+
+
 ### - não permitir numero repetido
 
 ## Gerenciar votações:
