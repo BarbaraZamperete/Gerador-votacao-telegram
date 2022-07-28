@@ -43,6 +43,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  min-width: 300px;
 }
 
 .cards__item {
@@ -69,6 +70,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-width: 300px;
 }
 
 .card__content {

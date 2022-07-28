@@ -15,10 +15,16 @@ votacaoCtrl.criarVotacaoForm = async (req, res) => {
 
 votacaoCtrl.criarVotacao = async (req, res) => {
     const { titulo, descricao, duracao } = req.body;
+    let date_ob = new Date();
+    let day = ("0" + date_ob.getDate()).slice(-2)
+    let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+    let year = date_ob.getFullYear();
+    let fullDate = day + "/" + month + "/" + year
     const newVotacao = new Votacao({
         titulo: titulo,
         descricao: descricao,
         duracao: duracao,
+        data: fullDate,
         status: false,
         sim: 0,
         nao: 0,
