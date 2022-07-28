@@ -1,7 +1,7 @@
 <nav id="navigation">
     <a href="/" class="logo">Gerenciador de Votações</a>
     <ul class="links">
-        {{#if userLogado}}
+        {{#if user}}
         <li class="dropdown"><a href="#" class="trigger-drop">Votações<i class="arrow"></i></a>
             <ul class="drop">
                 <li><a href="/">Todas</a></li>
@@ -13,7 +13,7 @@
         <li class="dropdown"><a href="#" class="trigger-drop">Eleitores<i class="arrow"></i></a>
             <ul class="drop">
                 <li><a href="/eleitores">Listar</a></li>
-                <li><a href="#">Sair</a></li>
+                <li><a href="/logout">Sair</a></li>
             </ul>
         </li>
         {{else}}

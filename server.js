@@ -6,7 +6,8 @@ const expressHbs = require('express-handlebars');
 const session = require('express-session');
 const flash = require("connect-flash");
 
-
+const passport = require('passport');
+require('./config/passport');
 //settings
 app.set('port', process.env.PORT || 4000);
 
@@ -30,7 +31,8 @@ app.use(session({
 }));
 
 app.use(flash());
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 //global variables
 app.use((req, res, next) => {

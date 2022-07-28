@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-const { logar, deslogar } = require("../controllers/index.controller");
+const { logarForm, deslogar, logar } = require("../controllers/index.controller");
 const {
   adicionarEleitor,
   removerEleitor,
@@ -18,28 +18,31 @@ const {
   desativar
 } = require("../controllers/votacao.controller");
 
+const { isAuthenticated } = require('../helpers/auth')
+
 //LOGIN PAGE
-router.get("/login", logar);
-router.get("/logout", deslogar);
+router.get("/login", logarForm);
+router.post("/login", logar)
+router.get("/logout", isAuthenticated, deslogar);
 
 //VOTAÇÕES
-router.get("/", exibirVotacoes);
+router.get("/", isAuthenticated, exibirVotacoes);
 
-router.get("/criar", criarVotacaoForm);
-router.post("/criar", criarVotacao);
+router.get("/criar", isAuthenticated, criarVotacaoForm);
+router.post("/criar", isAuthenticated, criarVotacao);
 
-router.get("/editar/:id", editarVotacaoForm);
-router.post("/editar/:id", editarVotacao);
+router.get("/editar/:id", isAuthenticated, editarVotacaoForm);
+router.post("/editar/:id", isAuthenticated, editarVotacao);
 
-router.post("/excluir/:id", excluirVotacao);
+router.post("/excluir/:id", isAuthenticated, excluirVotacao);
 
-router.post("/ativar/:id", ativar)
-router.post("/desativar/:id", desativar),
+router.post("/ativar/:id", isAuthenticated, ativar)
+router.post("/desativar/:id", isAuthenticated, desativar),
 
 //USUÁRIOS
 
-router.get("/eleitores", listarEleitor);
-router.post("/eleitores/adicionar", adicionarEleitor);
-router.post("/eleitores/deletar/:id", removerEleitor);
+router.get("/eleitores", isAuthenticated, listarEleitor);
+router.post("/eleitores/adicionar", isAuthenticated, adicionarEleitor);
+router.post("/eleitores/deletar/:id", isAuthenticated, removerEleitor);
 
 module.exports = router;

@@ -1,13 +1,23 @@
 const indexCtrl = {}
 
-const { votacoes, usuarios, votacao } = require("../data")
+const passport = require('passport');
 
-indexCtrl.logar = async (req, res) => {
+indexCtrl.logarForm = async (req, res) => {
     res.render('login');
 }
+indexCtrl.logar = passport.authenticate('local', {
+    failureRedirect: '/login',
+    successRedirect: '/',
+    failureFlash: true
+})
 
 indexCtrl.deslogar = async (req, res) => {
-    res.render('login');
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.redirect('/login')
+    });
 }
 
 
