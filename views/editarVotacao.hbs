@@ -1,13 +1,16 @@
 <h3 class="title-page">Votação</h3>
 <section class="usuários">
-    <form class="votacao" action="/editar/{{votacaoEditable._id}}" method="post">
-        <label for="titulo">Nome da votação:</label>
-        <input required type="text" name="titulo" id="" value="{{votacaoEditable.titulo}}">
-        <label for="descricao">Descrição da votação:</label>
-        <textarea required name="descricao">{{votacaoEditable.descricao}}</textarea>
-        <label for="duracao">Duração (dias):</label>
-        <input required name="duracao" value="{{votacaoEditable.duracao}}" type="number">
-        <input type="submit" value="Alterar">
-    </form>
-    <form action="/excluir/{{votacaoEditable._id}}" method="post"><button type="submit" class="btn btn--block card__btn">Excluir</button></form>
+    <div class="votacao-box">
+        <form class="votacao" action="/editar/{{votacaoEditable._id}}" method="post">
+            <label for="titulo">Nome da votação:</label>
+            <input required type="text" name="titulo" id="" value="{{votacaoEditable.titulo}}">
+            <label for="descricao">Descrição da votação:</label>
+            <textarea required name="descricao">{{votacaoEditable.descricao}}</textarea>
+            <label for="duracao">Duração (segundos):</label>
+            <input required name="duracao" value="{{votacaoEditable.duracao}}" type="number">
+            <input type="submit" value="Alterar">
+        </form>
+        <form action="/excluir/{{votacaoEditable._id}}" method="post"><button type="submit" class="btn btn--block card__btn">Excluir</button></form>
+    </div>
+
 </section>
